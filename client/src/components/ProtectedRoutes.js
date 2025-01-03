@@ -12,7 +12,7 @@ export default function ProtectedRoutes({children}) {
   const getUser = async() => {
     try {
       dispatch(showLoading())
-      const res = await axios.post('https://backend-doc-app.vercel.app//api/v1/user/getUserData',{
+      const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/getUserData',{
         token:localStorage.getItem('token')
       },
     {
