@@ -19,7 +19,7 @@ const BookingPage = () => {
 
   const getUserData = async () => {
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/doctor/getDoctorById', { doctorId: params.doctorId }, {
+      const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/doctor/getDoctorById', { doctorId: params.doctorId }, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -39,7 +39,7 @@ const BookingPage = () => {
             return alert("Date & Time Required")
         }
         dispatch(showLoading())
-        const res = await axios.post('http://localhost:3000/api/v1/user/book-appointment',
+        const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/book-appointment',
             {doctorId:params.doctorId,userId:user._id,doctorInfo:doctors,date:date,userInfo:user,time:time},{
                 headers: {
                   Authorization: "Bearer " + localStorage.getItem("token"),
@@ -62,7 +62,7 @@ const BookingPage = () => {
             return alert("Date & Time Required")
         }
         dispatch(showLoading())
-        const res = await axios.post('http://localhost:3000/api/v1/user/booking-availbility',{
+        const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/booking-availbility',{
             doctorId:params.doctorId,date,time
         },{
             headers: {
