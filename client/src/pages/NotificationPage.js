@@ -13,7 +13,7 @@ const NotificationPage = () => {
     const handleMarkAllRead = async() => {
         try {
             dispatch(showLoading())
-             const res = await axios.post('http://localhost:3000/api/v1/user/get-all-notification',{userId:user._id},{
+             const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/get-all-notification',{userId:user._id},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -34,7 +34,7 @@ const NotificationPage = () => {
     const handleNavigate = async() => {
         try {
             dispatch(showLoading())
-            const res = await axios.post('http://localhost:3000/api/v1/user/get-all-notification',{userId:user._id},{
+            const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/get-all-notification',{userId:user._id},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -57,7 +57,7 @@ const NotificationPage = () => {
     const handleDeleteAllRead= async() => {
         try {
             dispatch(showLoading())
-             const res = await axios.post('http://localhost:3000/api/v1/user/delete-all-notification',{userId:user._id},{
+             const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/delete-all-notification',{userId:user._id},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
