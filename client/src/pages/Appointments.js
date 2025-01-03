@@ -8,7 +8,7 @@ const Appointments = () => {
     const [appointments,setAppointments] = useState([])
     const getAppointments = async() => {
         try {
-            const res = await axios.get('http://localhost:3000/api/v1/user/user-appointments',{
+            const res = await axios.get('https://backend-doc-app.vercel.app/api/v1/user/user-appointments',{
                 headers:{
                     Authorization : "Bearer " + localStorage.getItem("token"),
                 },
