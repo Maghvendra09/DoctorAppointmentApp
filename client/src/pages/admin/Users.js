@@ -7,7 +7,7 @@ const Users = () => {
   const [users,setUsers] = useState([])
   const getUsers = async() => {
     try {
-      const  res = await axios.get('http://localhost:3000/api/v1/admin/getAllUsers',{
+      const  res = await axios.get('https://backend-doc-app.vercel.app/api/v1/admin/getAllUsers',{
         headers:{
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
