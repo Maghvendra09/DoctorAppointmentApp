@@ -7,7 +7,7 @@ const Doctors = () => {
   const [doctors,setDoctors] = useState([])
   const getDoctors = async() => {
     try {
-      const  res = await axios.get('http://localhost:3000/api/v1/admin/getAllDoctor',{
+      const  res = await axios.get('https://backend-doc-app.vercel.app/api/v1/admin/getAllDoctor',{
         headers:{
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -26,7 +26,7 @@ const Doctors = () => {
 
   const handleAccountStatus = async(record,status) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/admin/changeAccountStatus',
+      const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/admin/changeAccountStatus',
         {doctorId:record._id,userId:record.userId, status: status},{
         headers:{
           Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -43,7 +43,7 @@ const Doctors = () => {
 
   const handleAccountStatusReject = async(record,status) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/admin/changeAccountStatus',
+      const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/admin/changeAccountStatus',
         {doctorId:record._id,userId:record.userId, status: status},{
         headers:{
           Authorization: `Bearer ${localStorage.getItem("token")}`
