@@ -11,7 +11,7 @@ const DoctorAppointments = () => {
 
   const getAppointments = async () => {
     try {
-      const res = await axios.get("/api/v1/doctor/doctor-appointments", {
+      const res = await axios.get("https://backend-doc-app.vercel.app/api/v1/doctor/doctor-appointments", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -31,7 +31,7 @@ const DoctorAppointments = () => {
   const handleStatus = async (record, status) => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/update-status",
+        "https://backend-doc-app.vercel.app/api/v1/doctor/update-status",
         { appointmentsId: record._id, status },
         {
           headers: {
