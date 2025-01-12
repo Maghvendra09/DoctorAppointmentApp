@@ -14,6 +14,8 @@ import Profile from './pages/doctor/Profile.js'
 import BookingPage from './pages/BookingPage.js'
 import Appointments from './pages/Appointments.js'
 import DoctorAppointments from './pages/doctor/DoctorAppointments.js'
+import { SpeedInsights } from '@vercel/speed-insights/react'
+
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -83,6 +85,7 @@ function App() {
     }
     
     </BrowserRouter>
+    <SpeedInsights />
     </>
   );
 }
