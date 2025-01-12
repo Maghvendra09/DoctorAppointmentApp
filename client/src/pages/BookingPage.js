@@ -101,7 +101,11 @@ const BookingPage = () => {
                 setDate(moment(value).format("DD-MM-YYYY"))}} />
               <TimePicker className='m-2' format="HH:mm" onChange={(value) => {
                 setIsAvaibile(false)
-                setTime(moment(value).format("HH:mm"))}} />
+                if (value) {
+                  setTime(value.format("HH:mm"));
+                } else {
+                  setTime("");  
+                }}} />
               <button className='btn btn-primary mt-2' onClick={handleAvaibility}>Check Availability</button>
               {!isAvaibile && (
                 <button className='btn btn-dark mt-2' onClick={handleBooking}>Book Now</button>
