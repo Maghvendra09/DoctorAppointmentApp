@@ -8,7 +8,7 @@ const Users = () => {
 
   const getUsers = async () => {
     try {
-      const res = await axios.get('https://backend-doc-app.vercel.app//api/v1/admin/getAllUsers', {
+      const res = await axios.get('https://backend-doc-app.vercel.app/api/v1/admin/getAllUsers', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -24,7 +24,7 @@ const Users = () => {
   const handleBlock = async (email) => {
     try {
       const res = await axios.post(
-        'https://backend-doc-app.vercel.app//api/v1/admin/removeUser',
+        'https://backend-doc-app.vercel.app/api/v1/admin/removeUser',
         { email },
         {
           headers: {
