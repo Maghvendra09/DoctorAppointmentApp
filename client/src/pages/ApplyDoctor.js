@@ -14,11 +14,21 @@ const ApplyDoctor = () => {
     const navigate = useNavigate()
     const handleFinish = async(values)=>{
         try {
+            if (!values.timings || values.timings.length !== 2) {
+                message.error('Please select valid timings');
+                return;
+              }
+          
+              const [startTime, endTime] = values.timings;
+          
+
+              const formattedTimings = [
+                moment(startTime).format('HH:mm'),
+                moment(endTime).format('HH:mm'),
+              ];
+          
             dispatch(showLoading())
-            const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/apply-doctor', {...values, userId:user._id,timings:[
-                moment(values.timings[0]).format('HH:mm'),
-                moment(values.timings[1]).format('HH:mm'),
-              ]},{
+            const res = await axios.post('https://backend-doc-app.vercel.app/api/v1/user/apply-doctor', {...values, userId:user._id,timings:formattedTimings},{
                 headers:{
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
